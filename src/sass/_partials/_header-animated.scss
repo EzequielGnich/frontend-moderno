@@ -4,15 +4,17 @@ $width_scenery: 2400px;
 .header-animated {
   background-color: lighten($main-color, 0%);
   border-radius: 0;
-  padding-top: 96px;
+  // padding-top: 96px;
   padding: 10em 0 0 0px;
 
   .header-animated__title {
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
     color: #00151a;
     font-size: 38px;
     font-weight: 500;
   }
   .header-animated__subtitle {
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
     color: #fff;
     font-size: 28px;
     font-weight: 300;
@@ -21,26 +23,26 @@ $width_scenery: 2400px;
   }
 
   &__img {
-    background-image: url('../../img/cenario_all_960.png');
+    background-image: url("../../img/cenario_all_960.png");
     height: $h/2;
     background-size: auto 100%;
     background-position: 50% bottom;
     overflow: hidden;
 
-    &>div {
+    & > div {
       display: none;
     }
 
     @media screen and (min-width: 480px) {
-      background-image: url('../../img/cenario_all_1530.png');
+      background-image: url("../../img/cenario_all_1530.png");
     }
 
     @media screen and (min-width: 960px) {
-      background-image: url('../../img/cenario_bg.png');
+      background-image: url("../../img/cenario_bg.png");
       height: $h;
       position: relative;
-      
-      &>div {
+
+      & > div {
         display: block;
         height: 100%;
         top: 0;
@@ -50,7 +52,7 @@ $width_scenery: 2400px;
       }
 
       @mixin animate($name_image, $type_animation) {
-        background-image: url('../../img/#{$name_image}');
+        background-image: url("../../img/#{$name_image}");
         animation: animate_scenery $type_animation;
       }
 
@@ -74,15 +76,14 @@ $width_scenery: 2400px;
       @each $key, $value in $items {
         @if $value {
           .#{$key} {
-            @include animate('scenery_#{$key}.png', $value);
+            @include animate("scenery_#{$key}.png", $value);
           }
         } @else {
           .#{$key} {
-            @include animate('scenery_#{$key}.png');
+            @include animate("scenery_#{$key}.png");
           }
         }
       }
-
 
       /*
       .clouds {
