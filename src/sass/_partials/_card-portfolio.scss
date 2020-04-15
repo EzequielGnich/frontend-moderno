@@ -1,0 +1,77 @@
+.card-portfolio {
+  @mixin shadown($dir, $angle, $distance) {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background: #777;
+    width: 50%;
+    height: 20px;
+    bottom: 13px;
+    box-shadow: 0 15px 10px #777;
+    @if $dir == 'esq' {
+      transform: rotate($angle * -1);
+      left: $distance;
+    } @else {
+      transform: rotate($angle);
+      right: $distance;
+    }
+  }
+  &:before {
+    @include shadown('esq', 3deg, 5px);
+  }
+  &:after {
+    @include shadown('dir', 3deg, 5px);
+  }
+  padding: 0;
+  border-radius: 0;
+  border: 1px solid transparent;
+  position: relative;
+  &__footer {
+    height: 60px;
+  }
+  &__img {
+    height: 230px;
+    overflow: hidden;
+  }
+  &__img-portfolio {
+    max-width: 100%;
+    opacity: .5;
+    transition: opacity .4s linear, transform 4s ease-in;
+  }
+  &:hover {
+    .card-portfolio__img-portfolio {
+      opacity: 1;
+      transform: scale(1.30) rotate(-5deg);
+    }
+  }
+  &:hover {
+    .card-portfolio__btn {
+      background: lighten($main-color, 30);
+      color: #fff;
+      &:hover {
+        background: saturate($main-color, 30);
+        border-radius: 0px;
+      }
+    }
+  }
+  &__btn {
+    background: transparent;
+    color: #00ffd5;
+    display: block;
+    border: none;
+    width: 100px;
+    transition: all .4s linear;
+    border-radius: 0px;
+    position: relative;
+    left: 14.2em;
+    top: 12px;
+    @media screen and (min-width: 960px) {
+      left: 10.5em;
+      top: 12px;
+    }
+    @media screen and (max-width: 1198px) {
+      left: 10.5em;
+      top: 12px;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+$h: 300px;
+$width_scenery: 2400px;
+
+.header-animated {
+  background-color: lighten($main-color, 0%);
+  border-radius: 0;
+  padding-top: 96px;
+  padding: 10em 0 0 0px;
+
+  .header-animated__title {
+    color: #00151a;
+    font-size: 38px;
+    font-weight: 500;
+  }
+  .header-animated__subtitle {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  &__img {
+    background-image: url('../../img/cenario_all_960.png');
+    height: $h/2;
+    background-size: auto 100%;
+    background-position: 50% bottom;
+    overflow: hidden;
+
+    &>div {
+      display: none;
+    }
+
+    @media screen and (min-width: 480px) {
+      background-image: url('../../img/cenario_all_1530.png');
+    }
+
+    @media screen and (min-width: 960px) {
+      background-image: url('../../img/cenario_bg.png');
+      height: $h;
+      position: relative;
+      
+      &>div {
+        display: block;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: $width_scenery * 2;
+      }
+
+      @mixin animate($name_image, $type_animation) {
+        background-image: url('../../img/#{$name_image}');
+        animation: animate_scenery $type_animation;
+      }
+
+      @keyframes animate_scenery {
+        from {
+          transform: translateX(-50%) translateZ(0);
+        }
+        to {
+          transform: translateX(0) translateZ(0);
+        }
+      }
+
+      $items: (
+        clouds: 50s linear infinite reverse,
+        street: 100s linear infinite reverse,
+        houses: 100s linear infinite reverse,
+        cars-up: 15s linear infinite reverse,
+        cars-down: 25s linear infinite,
+      );
+
+      @each $key, $value in $items {
+        @if $value {
+          .#{$key} {
+            @include animate('scenery_#{$key}.png', $value);
+          }
+        } @else {
+          .#{$key} {
+            @include animate('scenery_#{$key}.png');
+          }
+        }
+      }
+
+
+      /*
+      .clouds {
+        @include animate('cenario_nuvens.png', 'animate_scenery', '50s', 'linear', 'infinite', reverse);
+      }
+      .street {
+        @include animate('cenario_rua.png', 'animate_scenery', '100s', 'linear', 'infinite', reverse, 100);
+      }
+      .houses {
+        @include animate('cenario_casas.png', 'animate_scenery', '100s', 'linear', 'infinite', reverse);
+      }
+      .cars-up {
+        @include animate('cenario_carrosCima.png', 'animate_scenery', '15s', 'linear', 'infinite', reverse, 200);
+      }
+      .cars-down {
+        @include animate('cenario_carrosBaixo.png', 'animate_scenery', '25s', 'linear', 'infinite', '', 300);
+      }
+      */
+    }
+  }
+}
