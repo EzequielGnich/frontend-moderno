@@ -1,58 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br" class="js">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Site pessoal Ezequiel Gnich</title>
-    <link
-      rel="stylesheet"
-      href="./components/bootstrap/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-    />
-    <link rel="stylesheet" href="css/main.css" />
-  </head>
 
-  <body>
-    @@include('./inc/nav.html')
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Site pessoal Ezequiel Gnich</title>
+  <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
 
-    <div class="jumbotron header-animated">
-      <div class="container">
-        <p class="header-animated__title">O que ando fazendo</p>
-        <h1 class="header-animated__subtitle">
-          Veja alguns dos meus trabalhos
-        </h1>
-      </div>
-    </div>
+<body>
+  @@include('./inc/nav.html')
 
+  <div class="jumbotron header-animated text-center">
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <h2>Último trabalhos</h2>
-        </div>
-      </div>
-      <!-- Fim row -->
-      <div class="row">
-        @@loop('./inc/card-portfolio.html', [ { "titulo": "Titulo Alterado 1",
-        "anuncio": "Minha descrição 1", "imagem": "img/portfolio/01.jpg",
-        "link": "#", "alt": "Texto alternativo 1" }, { "titulo": "Alterado 2",
-        "anuncio": "Minha descrição 2", "imagem": "img/portfolio/02.jpg",
-        "link": "#", "alt": "Texto alternativo 2" }, { "titulo": "Titulo
-        Alterado 1", "anuncio": "Minha descrição 1", "imagem":
-        "img/portfolio/01.jpg", "link": "#", "alt": "Texto alternativo 1" }, {
-        "titulo": "Alterado 2", "anuncio": "Minha descrição 2", "imagem":
-        "img/portfolio/02.jpg", "link": "#", "alt": "Texto alternativo 2" } ] )
-      </div>
-      <hr />
+      <p class="header-animated__title">O que ando fazendo</p>
+      <p class="header-animated__subtitle">
+        Veja alguns dos meus trabalhos
+      </p>
     </div>
-    <!-- container -->
+  </div>
 
-    @@include('./inc/footer.html')
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Último trabalhos</h2>
+      </div>
+    </div>
+    <!-- Fim row -->
+    <div class="row">
+      @@loop('./inc/card-portfolio.html', [
+      {
+      "titulo": "Titulo 1",
+      "anuncio": "descrição 1",
+      "imagem": "img/portfolio/01.jpg",
+      "link": "#",
+      "alt":
+      "Texto alternativo 1"
+      },
+      {
+      "titulo": "Titulo 2",
+      "anuncio": "descrição 2",
+      "imagem": "img/portfolio/02.jpg",
+      "link": "#",
+      "alt": "Texto alternativo 2"
+      },
+      {
+      "titulo": "Titulo 3",
+      "anuncio": "Minha descrição 3",
+      "imagem": "img/portfolio/03.jpg",
+      "link": "#",
+      "alt": "Texto alternativo 3"
+      },
+      {
+      "titulo": "Titulo 4",
+      "anuncio": "Minha descrição 4",
+      "imagem": "img/portfolio/04.jpg",
+      "link": "#",
+      "alt": "Texto alternativo 4"
+      },
+      {
+      "titulo": "Titulo 2",
+      "anuncio": "descrição 2",
+      "imagem": "img/portfolio/05.jpg",
+      "link": "#",
+      "alt": "Texto alternativo 2"
+      },
+      {
+      "titulo": "Titulo 3",
+      "anuncio": "Minha descrição 3",
+      "imagem": "img/portfolio/06.jpg",
+      "link": "#",
+      "alt": "Texto alternativo 3"
+      },
+      {
+      "titulo": "Titulo 4",
+      "anuncio": "Minha descrição 4",
+      "imagem": "img/portfolio/07.jpg",
+      "link": "#",
+      "alt": "Texto alternativo 4"
+      }
+      ] )
+    </div>
+    <hr />
+  </div>
+  <!-- container -->
 
-    <script src="./javascript/main.js"></script>
-    <script src="./javascript/menu.js"></script>
-  </body>
+  @@include('./inc/footer.html')
+
+  <script src="./javascript/main.js"></script>
+  <script src="./javascript/menu.js"></script>
+</body>
+
 </html>
