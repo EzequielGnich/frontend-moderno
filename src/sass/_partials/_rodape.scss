@@ -1,5 +1,5 @@
 .rodape {
-  background: lighten($main-color, 30);
+  background: darken($main-color, 30);
   color: white;
   padding: 1em 0;
 
@@ -7,6 +7,9 @@
     overflow: hidden;
     padding: 0;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     li {
       width: 20%;
@@ -20,7 +23,7 @@
       font-size: 1.5em;
       color: white;
       display: block;
-      text-align: right;
+      text-align: center;
     }
   }
 }
