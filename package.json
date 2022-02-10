@@ -22,7 +22,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "gulp-uncss": "^1.0.6",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "scripts": {
     "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap && cp -r node_modules/font-awesome/css src/components/font-awesome && cp -r node_modules/font-awesome/fonts src/components/font-awesome",
